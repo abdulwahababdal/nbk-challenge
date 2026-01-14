@@ -172,34 +172,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           );
                         },
                       ),
-                      const SizedBox(height: 16),
-                      Container(
-                        padding: const EdgeInsets.all(12),
-                        decoration: BoxDecoration(
-                          color: Colors.blue.shade50,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Column(
-                          children: [
-                            Text(
-                              'Default Credentials',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.blue.shade800,
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            const Text(
-                              'Username: admin',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                            const Text(
-                              'Password: admin123',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                          ],
-                        ),
-                      ),
                     ],
                   ),
                 ),

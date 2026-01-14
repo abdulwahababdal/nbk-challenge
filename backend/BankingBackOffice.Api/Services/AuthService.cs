@@ -51,9 +51,9 @@ public class AuthService : IAuthService
         {
             var defaultUser = new User
             {
-                Username = "admin",
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword("admin123"),
-                FullName = "System Administrator"
+                Username = "manager",
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword("myverysecretpassword"),
+                FullName = "Branch Manager"
             };
 
             _context.Users.Add(defaultUser);
