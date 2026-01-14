@@ -5,10 +5,6 @@ import '../models/customer.dart';
 import '../models/user.dart';
 
 class ApiService {
-  // Update this URL to match your backend API endpoint
-  // For Android Emulator: http://10.0.2.2:5000
-  // For iOS Simulator: http://localhost:5000
-  // For physical device: http://YOUR_COMPUTER_IP:5000
   static const String baseUrl = 'http://localhost:5000/api';
 
   String? _token;
@@ -18,9 +14,7 @@ class ApiService {
   }
 
   Map<String, String> _getHeaders({bool includeAuth = false}) {
-    final headers = {
-      'Content-Type': 'application/json',
-    };
+    final headers = {'Content-Type': 'application/json'};
 
     if (includeAuth && _token != null) {
       headers['Authorization'] = 'Bearer $_token';
@@ -34,10 +28,7 @@ class ApiService {
       final response = await http.post(
         Uri.parse('$baseUrl/auth/login'),
         headers: _getHeaders(),
-        body: jsonEncode({
-          'username': username,
-          'password': password,
-        }),
+        body: jsonEncode({'username': username, 'password': password}),
       );
 
       final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -161,7 +152,9 @@ class ApiService {
   }
 
   Future<ApiResponse<Customer>> updateCustomer(
-      int customerNumber, Customer customer) async {
+    int customerNumber,
+    Customer customer,
+  ) async {
     try {
       final response = await http.put(
         Uri.parse('$baseUrl/customers/$customerNumber'),
